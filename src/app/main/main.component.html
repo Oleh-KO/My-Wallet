@@ -1,0 +1,139 @@
+<div class="navigation">
+  <button type="button" class="btn about btn-dark" (click)="goToWallet()">My Wallet</button>
+  <button type="button" class="btn about btn-dark" (click)="goToAbout()">About</button>
+</div>
+<div class="leftRight" *ngIf="myWallet">
+  <div class="blockLeft">
+    <div class="balanceBorder">
+      <p class="balanceTitle">Balance
+        <img class="moneyBag" src="assets/images/money-bag.png" alt="">
+      </p><br>
+    </div>
+    <input id="moneyBalance" class="moneyBalance" type="text" value="{{addMoneyNumber}}" disabled>
+    <p class="uah">&#8372;</p>
+    <br>
+    <div class="border">
+      <img class="charts" src="assets/images/charts.png" alt="">
+      <div class="addMoney">
+        <button type="button" class="btn add-remove btn-outline-dark" (click)='addMoney()'>+500</button>
+        <button type="button" class="btn add-remove btn-outline-dark" (click)='removeMoney()'>-500</button>
+      </div>
+    </div>
+  </div>
+  <div class="blockRight">
+    <img class="wallet" src="assets/images/wallet.png" alt="">
+    <button type="button" class="plus" (click)="openModal(template)">
+      <img class="add" src="assets/images/plus2.png" alt="">
+    </button>
+    <form action="" [formGroup]="paymentForm">
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left" style="color:#3986A3">Create new item</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true" style="color:#3986A3;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id='modal-body'>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary btn-success" (click)='income()'>Income</button>
+            <button type="button" class="btn btn-secondary btn-danger" (click)='expance()'>Expance</button>
+          </div>
+          <input type="text" id="sum" #sumsum class="modalInput" placeholder="Enter sum..." formControlName="Sum">
+          <input type="text" id="description" class="modalInput" placeholder="Enter description..."
+            formControlName="Description">
+          <div class="row">
+            <div class="col-xs-12 col-12 col-md-4 form-group">
+              <input #datepick id="picker" class="form-control modalInput" placeholder="Datepicker"
+                formControlName="Date" bsDatepicker
+                [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-red' }">
+            </div>
+          </div>
+          <div class="btnGropModal">
+            <button type="button" class="btn btnMdl btn-success" (click)='newItem()'>Save</button>
+            <button type="button" class="btn btnMdl btn-danger" (click)='cancel()'>Cancel</button>
+          </div>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+  <div class="lowerSection">
+    <hr class="line">
+    <div class="searchFilter">
+      <input type="search" class="search" placeholder="Search" [(ngModel)]="search">
+    </div>
+    <div class="filters">
+      <button type="button" class="btn filterBtn btn-outline-info" (click)="allFunc()">All</button>
+      <button type="button" class="btn filterBtn btn-outline-info" (click)="incomeFunc()">
+        <img class="interest" src="assets/images/interest2.png">Income</button>
+      <button type="button" class="btn filterBtn btn-outline-info" (click)="expanceFunc()">
+        <img class="interest" src="assets/images/interest.png">Expance</button>
+    </div>
+    <div *ngIf="first">
+      <div class="paymentItem" *ngFor="let item of paymentArrayTwo | filterBySearch:search; let i = index">
+        <img *ngIf='!item.income' class="chevron" src="assets/images/down-chevron2.png">
+        <img *ngIf='item.income' class="chevron" src="assets/images/up-chevron.png">
+        <div class="blockOne">
+          <p>{{item.description}}</p>
+        </div>
+        <div class="blockTwo">
+          <p>{{item.sum}}</p>
+        </div>
+        <div class="blockThree">
+          <p>{{item.date}}</p>
+        </div>
+        <div class="blockFour">
+          <button id="edit" type="button" class="btn editDelete btn-success" (click)="edit(item.id, template)">Edit</button>
+          <button type="button" class="btn editDelete btn-danger" (click)="delete(item.id, i)">Delete</button>
+        </div>
+
+      </div>
+    </div>
+    <div *ngIf="second">
+      <div class="paymentItem" *ngFor="let object1 of incomeArray; let i = index">
+        <img *ngIf='!object1.income' class="chevron" src="assets/images/down-chevron2.png">
+        <img *ngIf='object1.income' class="chevron" src="assets/images/up-chevron.png">
+        <div class="blockOne">
+          <p>{{object1.description}}</p>
+        </div>
+        <div class="blockTwo">
+          <p>{{object1.sum}}</p>
+        </div>
+        <div class="blockThree">
+          <p>{{object1.date}}</p>
+        </div>
+        <div class="blockFour">
+          <button type="button" class="btn editDelete btn-success">Edit</button>
+          <button type="button" class="btn editDelete btn-danger" (click)="delete(object1.id, i)">Delete</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="third">
+      <div class="paymentItem" *ngFor="let object2 of expanceArray; let i = index">
+        <img *ngIf='!object2.income' class="chevron" src="assets/images/down-chevron2.png">
+        <img *ngIf='object2.income' class="chevron" src="assets/images/up-chevron.png">
+        <div class="blockOne">
+          <p>{{object2.description}}</p>
+        </div>
+        <div class="blockTwo">
+          <p>{{object2.sum}}</p>
+        </div>
+        <div class="blockThree">
+          <p>{{object2.date}}</p>
+        </div>
+        <div class="blockFour">
+          <button type="button" class="btn editDelete btn-success">Edit</button>
+          <button type="button" class="btn editDelete btn-danger" (click)="delete(object2.id, i)">Delete</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="about">
+  <app-about></app-about>
+</div>

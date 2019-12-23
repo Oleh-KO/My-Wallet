@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Bootstrap */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+bs-datepicker-container {
+  width: 300px;
+  height: 230px;
+  color: #6d04ce;
+  background-color: #0b102e;
+  border: 1px solid #3986A3;
+  border-radius: 6px;
+  position: absolute !important;
+  top: -44px !important;
+  left: 233px !important;
+  z-index: 10000;
+}
+
+.bs-datepicker-body {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 10px !important;
+}
+
+
+bs-datepicker-navigation-view {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.previous,
+.next,
+.current,
+.current {
+  color: #6d04ce;
+  background-color: transparent;
+  border: transparent;
+}
+
+.container {
+  max-width: 100% !important;
+}

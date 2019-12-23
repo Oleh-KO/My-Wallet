@@ -1,0 +1,19 @@
+.notFoundHead {
+  color: red;
+  text-align: center;
+  font-size: 54px;
+}
+
+.imageBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFound {
+  width: 200px;
+  height: 200px;
+  margin-top: 30px;
+}

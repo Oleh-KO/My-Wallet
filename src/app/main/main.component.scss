@@ -1,0 +1,232 @@
+// Upper Section
+.navigation {
+  width: 100%;
+  background-color: #0c1026;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.about {
+  color: #3986A3;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: -24px;
+  line-height: 1;
+  background-color: transparent;
+  border: transparent;
+}
+
+.leftRight {
+  background-color: #0b102e;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blockLeft {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balanceTitle {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 41px;
+  color: #6d04ce;
+}
+
+.balanceBorder {
+  width: 201px;
+  height: 89px;
+  border: 2px solid #3986A3;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+}
+
+.moneyBag {
+  width: 40px;
+  height: 40px;
+}
+
+.moneyBalance {
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: white;
+  font-size: 30px;
+  text-align: center;
+  border: 2px solid #3986A3;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.charts {
+  width: 159px;
+  height: 129px;
+}
+
+.border {
+  width: 200px;
+  height: 183px;
+  border: 2px solid #3986A3 !important;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-remove {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: ghostwhite;
+  border-color: #3986A3;
+
+}
+
+.blockRight {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uah {
+  width: 14px;
+  height: 14px;
+  font-size: 40px;
+  color: #3986A3;
+  position: relative;
+  left: 57px;
+  bottom: 57px;
+}
+
+.wallet {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 116px;
+}
+
+.add {
+  width: 80px;
+  height: 80px;
+}
+
+.plus {
+  background-color: transparent;
+  border: transparent;
+}
+
+// Lower section-----------------------------
+.lowerSection {
+  width: 100%;
+  background-color: #0b102e;
+
+}
+
+.line {
+  height: 2px;
+  margin-top: 46px;
+  margin-bottom: 46px;
+}
+
+// MODAL-----
+.modal-header {
+  background-color: #0b102e;
+  border: 1px solid #3986A3;
+
+}
+
+.modal-body {
+  background-color: #0b102e;
+  border: 1px solid #3986A3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modalInput {
+  border: 1px solid #3986A3;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+.btnGropModal {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnMdl {
+  margin-left: 4px;
+}
+
+//------
+
+
+.filters {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.searchFilter {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 738px;
+  height: 37px;
+  color: #6d04ce;
+  border: 2px solid #3986A3;
+  border-radius: 3px;
+  padding-left: 5px;
+  background-color: #0b102e;
+}
+
+.filterBtn {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: ghostwhite;
+  border-color: #3986A3;
+}
+
+.interest {
+  width: 35px;
+  height: 33px;
+}
+
+.paymentItem {
+  width: 732px;
+  height: 70px;
+  border: 1px solid #3986A3;
+  color: white;
+  border-radius: 4px;
+  line-height: 4;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+.editDelete {
+  margin-right: 5px;
+}
+
+.chevron {
+  width: 40px;
+  height: 40px;
+  margin-top: 14px;
+}

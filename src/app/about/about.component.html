@@ -1,0 +1,27 @@
+<div class="mainContainer">
+  <div class="blockLeft">
+    <button type="button" class="btn usersBtn btn-outline-info" (click)="goToAbout()">About</button>
+    <button type="button" class="btn usersBtnTwo btn-outline-info" (click)="goToUsers()">Users</button>
+  </div>
+  <div class="container">
+    <div *ngIf="about" class="blockRight">
+      <h2>About MyWallet Project</h2>
+      <p style="margin-top: 30px; margin-bottom: 64px;">A mobile wallet is pretty much exactly what it sounds like: a
+        “wallet” that lives on
+        your mobile device instead
+        of in your back pocket.
+        So, why might you want one? Because it provides a convenient way to pay for goods and services with your
+        smartphone, smartwatch or another compatible device, like a tablet.
+        It can manage all your credit cards, loyalty club memberships and reward cards, and it may help to reduce fraud,
+        too, as mobile wallets are generally harder to steal or copy than physical cards and cash.</p>
+      <div class="remarks">
+        <img class="myLogo" src="assets/images/myLogo.svg">
+        <p>Created by Oleh Kosach</p>
+      </div>
+    </div>
+
+    <div *ngIf="users">
+      <app-users></app-users>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="userContainer">
+  <div class="user1">
+    <p>Natalie Sauer</p>
+    <button type="button" class="btn moreInfo btn-outline-info" (click)="openModal1(template)">More info</button>
+  </div>
+  <div class="user2">
+    <p>Lucio Ziemann</p>
+    <button type="button" class="btn moreInfo btn-outline-info" (click)="openModal2(template)">More info</button>
+  </div>
+  <div class="user3">
+    <p>Virgil Schimmel</p>
+    <button type="button" class="btn moreInfo btn-outline-info" (click)="openModal3(template)">More info</button>
+  </div>
+  <div class="user4">
+    <p>Justice Reinger</p>
+    <button type="button" class="btn moreInfo btn-outline-info" (click)="openModal4(template)">More info</button>
+  </div>
+  <ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left" style="color:#3986A3">Create new item</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true" style="color:#3986A3;">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" id='modal-body'>
+      <div *ngIf="natalie">
+        <div class="paymentItem" *ngFor="let userOne of firstUser; let i = index">
+          <div class="blockOne">
+            <p>id: {{userOne.id}}</p>
+          </div>
+          <div class="blockTwo">
+            <p>name: {{userOne.name}}</p>
+          </div>
+          <div class="blockThree">
+            <p>phone: {{userOne.phone}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="lucio">
+        <div class="paymentItem" *ngFor="let userTwo of secondUser; let i = index">
+          <div class="blockOne">
+            <p>id: {{userTwo.id}}</p>
+          </div>
+          <div class="blockTwo">
+            <p>name: {{userTwo.name}}</p>
+          </div>
+          <div class="blockThree">
+            <p>phone: {{userTwo.phone}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="virgil">
+        <div class="paymentItem" *ngFor="let userThree of thirdUser; let i = index">
+          <div class="blockOne">
+            <p>id: {{userThree.id}}</p>
+          </div>
+          <div class="blockTwo">
+            <p>name: {{userThree.name}}</p>
+          </div>
+          <div class="blockThree">
+            <p>phone: {{userThree.phone}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="justice">
+        <div class="paymentItem" *ngFor="let userFour of fourUser; let i = index">
+          <div class="blockOne">
+            <p>id: {{userFour.id}}</p>
+          </div>
+          <div class="blockTwo">
+            <p>name: {{userFour.name}}</p>
+          </div>
+          <div class="blockThree">
+            <p>phone: {{userFour.phone}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+
+
+
+</div>
